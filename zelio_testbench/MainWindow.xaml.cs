@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using zelio_testbench.debug_hmi;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -22,21 +23,43 @@ namespace zelio_testbench
     /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly Sync_with_zelio sync_zelio = Sync_with_zelio.GetInstance();
+        private bool is_simu_started = false;
         public MainWindow()
         {
-            InitializeComponent();
-            Sync_with_zelio sync_zelio = Sync_with_zelio.GetInstance();
-            sync_zelio.start_process_scan(200, Callback_zelio_out_has_changed);
-
-
-           
+            sync_zelio.Set_log_callback(Callback_log_info);
         }
 
-        public void Callback_zelio_out_has_changed(Dictionary<int, bool> output_has_changed)
+        private void Callback_log_info(String text)
         {
-            foreach (int index in output_has_changed.Keys)
+            Dispatcher.Invoke(() =>
             {
-                Debug.WriteLine("Changed b" + index + ": " + output_has_changed[index]);
+                debug_info.Text = text;
+            });
+        }
+
+        private void Update_toggle_button()
+        {
+            debug_button_play.button_play_template.IsChecked = is_simu_started;
+            TP_button_play.button_play_template.IsChecked = is_simu_started;
+        }
+
+
+        private void Start(object sender, RoutedEventArgs e)
+        {
+            if (!is_simu_started)
+            {
+                is_simu_started = sync_zelio.Start_process_scan();
+                Update_toggle_button();
+            }
+        }
+
+        private void Stop(object sender, RoutedEventArgs e)
+        {
+            if (is_simu_started)
+            {
+                sync_zelio.Stop_process_scan();
+                Update_toggle_button();
             }
         }
     }

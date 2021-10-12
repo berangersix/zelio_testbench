@@ -9,7 +9,34 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="debug_hmi\Images\volt.png" />
+    <None Remove="debug_hmi\in_bleu.png" />
+    <None Remove="debug_hmi\in_rouge.png" />
+    <None Remove="debug_hmi\out_bleu.png" />
+    <None Remove="debug_hmi\out_rouge.png" />
+    <None Remove="debug_hmi\pause.png" />
+    <None Remove="debug_hmi\play.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="debug_hmi\Images\in_bleu.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Jupiter" Version="1.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="debug_hmi\Images\in_rouge.png" />
+    <Resource Include="debug_hmi\Images\out_bleu.png" />
+    <Resource Include="debug_hmi\Images\out_rouge.png" />
+    <Resource Include="debug_hmi\Images\pause.png">
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="debug_hmi\Images\play.png" />
+    <Resource Include="debug_hmi\Images\volt.png">
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

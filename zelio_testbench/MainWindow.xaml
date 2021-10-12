@@ -3,8 +3,69 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:uc="clr-namespace:zelio_testbench.debug_hmi"
         xmlns:local="clr-namespace:zelio_testbench"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid/>
+
+    <Grid>
+        <TabControl>
+            <TabItem Header="TP">
+                <Grid Background="#FFE5E5E5">
+                    <uc:Play_button x:Name="TP_button_play" HorizontalAlignment="Right" Margin="0,293,10,0" VerticalAlignment="Top" Height="41" Width="101"  Played_event="Start"  Paused_event="Stop"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="DebugView" Height="20" VerticalAlignment="Top">
+                <Grid Background="#FFE5E5E5">
+                    <TextBox x:Name="debug_info" Margin="0,339,0,10" TextWrapping="Wrap" IsReadOnly="True" Background="#FFF1F0F0" BorderBrush="#FF131827"/>
+                    <Label x:Name="label_debug" Content="Debug_info : " HorizontalAlignment="Left" Margin="10,308,0,0" VerticalAlignment="Top"/>
+                    <uc:Input_zelio x:Name="I1" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top" MaxHeight="40" MaxWidth="40" Index="1"/>
+                    <uc:Input_zelio x:Name="I2" HorizontalAlignment="Left" Margin="50,30,0,0" VerticalAlignment="Top" MaxHeight="40" MaxWidth="40" Index="2"/>
+                    <uc:Input_zelio x:Name="I3" HorizontalAlignment="Left" Margin="90,30,0,0" VerticalAlignment="Top" MaxHeight="40" MaxWidth="40" Index="3"/>
+                    <uc:Input_zelio x:Name="I4" HorizontalAlignment="Left" Margin="130,30,0,0" VerticalAlignment="Top" MaxHeight="40" MaxWidth="40" Index="4"/>
+                    <uc:Input_zelio x:Name="I5" HorizontalAlignment="Left" Margin="170,30,0,0" VerticalAlignment="Top" MaxHeight="40" MaxWidth="40" Index="5"/>
+                    <uc:Input_zelio x:Name="I6" HorizontalAlignment="Left" Margin="210,30,0,0" VerticalAlignment="Top" MaxHeight="40" MaxWidth="40" Index="6"/>
+                    <uc:Input_zelio x:Name="I7" HorizontalAlignment="Left" Margin="250,30,0,0" VerticalAlignment="Top" MaxHeight="40" MaxWidth="40" Index="7"/>
+                    <uc:Input_zelio x:Name="I8" HorizontalAlignment="Left" Margin="290,30,0,0" VerticalAlignment="Top" MaxHeight="40" MaxWidth="40" Index="8"/>
+                    <uc:Input_zelio x:Name="I9" HorizontalAlignment="Left" Margin="330,30,0,0" VerticalAlignment="Top" MaxHeight="40" MaxWidth="40" Index="9"/>
+                    <uc:Input_zelio x:Name="I10" HorizontalAlignment="Left" Margin="370,30,0,0" VerticalAlignment="Top" MaxHeight="40" MaxWidth="40" Index="10"/>
+                    <uc:Input_zelio x:Name="I11" HorizontalAlignment="Left" Margin="410,30,0,0" VerticalAlignment="Top" MaxHeight="40" MaxWidth="40" Index="11"/>
+                    <uc:Input_zelio x:Name="I12" HorizontalAlignment="Left" Margin="450,30,0,0" VerticalAlignment="Top" MaxHeight="40" MaxWidth="40" Index="12"/>
+                    <uc:Input_zelio x:Name="I13" HorizontalAlignment="Left" Margin="490,30,0,0" VerticalAlignment="Top" MaxHeight="40" MaxWidth="40" Index="13"/>
+                    <uc:Input_zelio x:Name="I14" HorizontalAlignment="Left" Margin="530,30,0,0" VerticalAlignment="Top" MaxHeight="40" MaxWidth="40" Index="14"/>
+                    <uc:Input_zelio x:Name="I15" HorizontalAlignment="Left" Margin="570,30,0,0" VerticalAlignment="Top" MaxHeight="40" MaxWidth="40" Index="15"/>
+                    <uc:Input_zelio x:Name="I16" HorizontalAlignment="Left" Margin="610,30,0,0" VerticalAlignment="Top" MaxHeight="40" MaxWidth="40" Index="16"/>
+                    
+                    <uc:Analog_in_zelio x:Name="AI1" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" MaxHeight="60" MaxWidth="50" Index="1"/>
+                    <uc:Analog_in_zelio x:Name="AI2" HorizontalAlignment="Left" Margin="70,100,0,0" VerticalAlignment="Top" MaxHeight="60" MaxWidth="50" Index="2"/>
+                    <uc:Analog_in_zelio x:Name="AI3" HorizontalAlignment="Left" Margin="130,100,0,0" VerticalAlignment="Top" MaxHeight="60" MaxWidth="50" Index="3"/>
+                    <uc:Analog_in_zelio x:Name="AI4" HorizontalAlignment="Left" Margin="190,100,0,0" VerticalAlignment="Top" MaxHeight="60" MaxWidth="50" Index="4"/>
+                    <uc:Analog_in_zelio x:Name="AI5" HorizontalAlignment="Left" Margin="250,100,0,0" VerticalAlignment="Top" MaxHeight="60" MaxWidth="50" Index="5"/>
+                    <uc:Analog_in_zelio x:Name="AI6" HorizontalAlignment="Left" Margin="310,100,0,0" VerticalAlignment="Top" MaxHeight="60" MaxWidth="50" Index="6"/>
+
+
+                    <uc:Output_zelio x:Name="O1" HorizontalAlignment="Left" Margin="10,220,0,0" VerticalAlignment="Top" MaxHeight="40" MaxWidth="40" Index="1"/>
+                    <uc:Output_zelio x:Name="O2" HorizontalAlignment="Left" Margin="50,220,0,0" VerticalAlignment="Top" MaxHeight="40" MaxWidth="40" Index="2"/>
+                    <uc:Output_zelio x:Name="O3" HorizontalAlignment="Left" Margin="90,220,0,0" VerticalAlignment="Top" MaxHeight="40" MaxWidth="40" Index="3"/>
+                    <uc:Output_zelio x:Name="O4" HorizontalAlignment="Left" Margin="130,220,0,0" VerticalAlignment="Top" MaxHeight="40" MaxWidth="40" Index="4"/>
+                    <uc:Output_zelio x:Name="O5" HorizontalAlignment="Left" Margin="170,220,0,0" VerticalAlignment="Top" MaxHeight="40" MaxWidth="40" Index="5"/>
+                    <uc:Output_zelio x:Name="O6" HorizontalAlignment="Left" Margin="210,220,0,0" VerticalAlignment="Top" MaxHeight="40" MaxWidth="40" Index="6"/>
+                    <uc:Output_zelio x:Name="O7" HorizontalAlignment="Left" Margin="250,220,0,0" VerticalAlignment="Top" MaxHeight="40" MaxWidth="40" Index="7"/>
+                    <uc:Output_zelio x:Name="O8" HorizontalAlignment="Left" Margin="290,220,0,0" VerticalAlignment="Top" MaxHeight="40" MaxWidth="40" Index="8"/>
+                    <uc:Output_zelio x:Name="O9" HorizontalAlignment="Left" Margin="330,220,0,0" VerticalAlignment="Top" MaxHeight="40" MaxWidth="40" Index="9"/>
+                    <uc:Output_zelio x:Name="O10" HorizontalAlignment="Left" Margin="370,220,0,0" VerticalAlignment="Top" MaxHeight="40" MaxWidth="40" Index="10"/>
+                    <uc:Output_zelio x:Name="O11" HorizontalAlignment="Left" Margin="410,220,0,0" VerticalAlignment="Top" MaxHeight="40" MaxWidth="40" Index="11"/>
+                    <uc:Output_zelio x:Name="O12" HorizontalAlignment="Left" Margin="450,220,0,0" VerticalAlignment="Top" MaxHeight="40" MaxWidth="40" Index="12"/>
+                    <uc:Output_zelio x:Name="O13" HorizontalAlignment="Left" Margin="490,220,0,0" VerticalAlignment="Top" MaxHeight="40" MaxWidth="40" Index="13"/>
+                    <uc:Output_zelio x:Name="O14" HorizontalAlignment="Left" Margin="530,220,0,0" VerticalAlignment="Top" MaxHeight="40" MaxWidth="40" Index="14"/>
+                    <uc:Output_zelio x:Name="O15" HorizontalAlignment="Left" Margin="570,220,0,0" VerticalAlignment="Top" MaxHeight="40" MaxWidth="40" Index="15"/>
+                    <uc:Output_zelio x:Name="O16" HorizontalAlignment="Left" Margin="610,220,0,0" VerticalAlignment="Top" MaxHeight="40" MaxWidth="40" Index="16"/>
+
+
+                    <uc:Play_button x:Name="debug_button_play" HorizontalAlignment="Right" Margin="0,293,10,0" VerticalAlignment="Top" Height="41" Width="101" Played_event="Start"  Paused_event="Stop"/>
+
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
 </Window>

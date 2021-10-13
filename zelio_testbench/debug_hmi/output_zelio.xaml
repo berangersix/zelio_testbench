@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="zelio_testbench.debug_hmi.Output_zelio"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:zelio_testbench.debug_hmi"
+             mc:Ignorable="d" 
+             d:DesignHeight="45" d:DesignWidth="45">
+    <UserControl.Resources>
+        <Image Source="/debug_hmi/Images/out_bleu.png" x:Key="out_off_img" />
+        <Image Source="/debug_hmi/Images/out_rouge.png" x:Key="out_on_img" />
+        <Style TargetType="{x:Type ToggleButton}" x:Key="output_button_style">
+            <Setter Property="Content" Value="{DynamicResource out_off_img}" />
+            <Style.Triggers>
+                <Trigger Property="IsChecked" Value="True">
+                    <Setter Property="Content" Value="{DynamicResource out_on_img}" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <ToggleButton x:Name="button_output_template" Style="{StaticResource output_button_style}" IsEnabled="False"/>
+        <Label x:Name="button_output_template_label" Content="OX" HorizontalAlignment="Center" Margin="0,-31,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+
+    </Grid>
+
+
+
+</UserControl>

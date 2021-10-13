@@ -9,11 +9,9 @@
         Title="MainWindow" Height="450" Width="800">
 
     <Grid>
-        <TabControl>
-            <TabItem Header="TP">
-                <Grid Background="#FFE5E5E5">
-                    <uc:Play_button x:Name="TP_button_play" HorizontalAlignment="Right" Margin="0,293,10,0" VerticalAlignment="Top" Height="41" Width="101"  Played_event="Start"  Paused_event="Stop"/>
-                </Grid>
+        <TabControl x:Name="tab_w">
+            <TabItem Header="TP" x:Name="TP_tab">
+                <Grid x:Name="TP_tab_main_grid"></Grid>
             </TabItem>
             <TabItem Header="DebugView" Height="20" VerticalAlignment="Top">
                 <Grid Background="#FFE5E5E5">

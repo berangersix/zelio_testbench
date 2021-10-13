@@ -53,13 +53,20 @@ namespace zelio_testbench
 
         //log mutext
         private static readonly object _sync_log = new();
+        /// <summary>
+        /// Export output log to a callback
+        /// </summary>
+        /// <param name="text">log text</param>
         private void Local_log(String text)
         {
             lock (_sync_log) {
                 log.Invoke(text);
             }
         }
-
+        /// <summary>
+        /// Set a delegate for log
+        /// </summary>
+        /// <param name="log_call"></param>
         public void Set_log_callback(log_del log_call)
         {
             lock (_sync_log)
@@ -70,6 +77,11 @@ namespace zelio_testbench
 
         //log mutext
         private static readonly object _sync_callback = new();
+        /// <summary>
+        /// When output at index change , delegate callback is called
+        /// </summary>
+        /// <param name="index"></param>
+        /// <param name="callback"></param>
         public void Set_callback(int index, del_output_changed callback)
         {
             lock (_sync_callback)
@@ -79,7 +91,10 @@ namespace zelio_testbench
                
             }
         }
-
+        /// <summary>
+        /// Main loop scan process call this method to raide callback attached to every output
+        /// </summary>
+        /// <param name="output_has_changed"></param>
         private void Local_callback(Dictionary<int, bool> output_has_changed)
         {
             lock (_sync_callback)
@@ -350,6 +365,11 @@ namespace zelio_testbench
             return output;
         }
 
+        /// <summary>
+        /// This loop read and write data in zelio soft, if an output changed it also call delegate associate to it (previously vi setcallback method)
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="e"></param>
         private void Update_loop(Object source, ElapsedEventArgs e)
         {
             Dictionary<int, bool> output_changed = new();

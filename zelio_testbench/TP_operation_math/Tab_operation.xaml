@@ -1,0 +1,22 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:zelio_testbench.TP_operation_math"
+             xmlns:debug_hmi="clr-namespace:zelio_testbench.debug_hmi" xmlns:TP_operation="clr-namespace:zelio_testbench.TP_operation" x:Class="zelio_testbench.TP_operation_math.Tab_operation"
+             mc:Ignorable="d" 
+             d:DesignHeight="270" d:DesignWidth="500">
+
+    <Grid Background="#FFE5E5E5">
+
+        <TP_operation:NumericUpDown x:Name="E1"  Margin="10,40,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TP_operation:NumericUpDown x:Name="E2"  Margin="148,40,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <local:Numerical_display    x:Name="S" Margin="87,140,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label Content="Sortie" HorizontalAlignment="Left" Margin="117,114,0,0" VerticalAlignment="Top"/>
+        <Label Content="Entrée1" HorizontalAlignment="Left" Margin="60,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="Entrée2" HorizontalAlignment="Left" Margin="198,10,0,0" VerticalAlignment="Top"/>
+        <debug_hmi:Play_button x:Name="TP_button_play" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,20"  Height="41" Width="101" Played_event="Play_event"  Paused_event="Pause_event"/>
+    </Grid>
+
+</UserControl>

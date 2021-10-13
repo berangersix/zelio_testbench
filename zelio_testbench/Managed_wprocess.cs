@@ -9,6 +9,9 @@ using Jupiter;
 
 namespace zelio_testbench
 {
+    /// <summary>
+    /// Some method to find, and write into zelio mem
+    /// </summary>
     class Managed_wprocess
     {
 

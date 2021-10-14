@@ -9,7 +9,10 @@
     <Grid Background="#FFE5E5E5">
         <ListBox x:Name="List_choix" HorizontalAlignment="Center" VerticalAlignment="Top" Width="780" Margin="0,30,0,0" RenderTransformOrigin="0.355,0.539" Height="236">
             <ListBoxItem Content="Operateur Mathematique" IsSelected="True"></ListBoxItem>
-            <ListBoxItem Content="TP Feu Tricolore" ></ListBoxItem>
+            <ListBoxItem Content="Chateau d'eau" ></ListBoxItem>
+            <ListBoxItem Content="Feu Boite" ></ListBoxItem>
+            <ListBoxItem Content="Ascenceur Boite" ></ListBoxItem>
+            <ListBoxItem Content="Debug Only" ></ListBoxItem>
         </ListBox>
         <Button Content="Select" HorizontalAlignment="Center" Width="150" Margin="0,0,0,20" VerticalAlignment="Bottom" RenderTransformOrigin="0.355,0.539"  Click="Select_clicked"/>
 

@@ -16,6 +16,7 @@
     <None Remove="debug_hmi\out_rouge.png" />
     <None Remove="debug_hmi\pause.png" />
     <None Remove="debug_hmi\play.png" />
+    <None Remove="Feu_boite\Feu_boit_image.bmp" />
   </ItemGroup>
 
   <ItemGroup>
@@ -37,6 +38,11 @@
     <Resource Include="debug_hmi\Images\volt.png">
       <CopyToOutputDirectory></CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Feu_boite\Feu_boit_image.bmp" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Ascenceur Boite\" />
   </ItemGroup>
 
 </Project>

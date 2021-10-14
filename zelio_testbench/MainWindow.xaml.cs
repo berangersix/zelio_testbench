@@ -17,6 +17,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using zelio_testbench.TP_operation_math;
 using zelio_testbench.select_TP;
+using zelio_testbench.Chateau_eau;
+using zelio_testbench.Feu_boite;
 
 namespace zelio_testbench
 {
@@ -74,6 +76,22 @@ namespace zelio_testbench
                 gr_op.Played_event += Start;
                 gr_op.Paused_event += Stop;
                 tp_grid = gr_op;
+            }
+            else if (choice.Contains("Chateau d'eau"))
+            {
+                Tab_chateau gr_chateau = new();
+                TP_tab_main_grid.Children.Add(gr_chateau);
+
+                tp_grid = gr_chateau;
+            }
+            else if (choice.Contains("Feu Boite"))
+            {
+                Tab_feu_tricolore gr_feu_box = new();
+                gr_feu_box.Set_dic(dic_output, dic_input);
+                TP_tab_main_grid.Children.Add(gr_feu_box);
+                gr_feu_box.Played_event += Start;
+                gr_feu_box.Paused_event += Stop;
+                tp_grid = gr_feu_box;
             }
         }
 

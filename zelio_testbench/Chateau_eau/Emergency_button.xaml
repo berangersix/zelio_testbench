@@ -1,0 +1,67 @@
+﻿<UserControl x:Class="zelio_testbench.Chateau_eau.Emergency_button"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:zelio_testbench.Chateau_eau"
+             mc:Ignorable="d" Height="60" Width="60">
+    <UserControl.Resources>
+
+        <Style x:Key="notAusButton" TargetType="{x:Type ToggleButton}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ToggleButton">
+                        <BulletDecorator Background="Transparent" Cursor="Hand">
+                            <BulletDecorator.Bullet>
+                                <Grid
+                                Width="Auto"
+                                Height="Auto"
+                                Margin="0,4"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center">
+                                    <Border
+                                    BorderBrush="Gray"
+                                    BorderThickness="1"
+                                    CornerRadius="50">
+                                        <Border
+                                        x:Name="outerBorder"
+                                        Width="50"
+                                        Height="50"
+                                        Background="Yellow"
+                                        CornerRadius="50">
+                                            <Border
+                                            x:Name="innerBorder"
+                                            Width="30"
+                                            Height="30"
+                                            Background="Red"
+                                            BorderBrush="Black"
+                                            BorderThickness="0,0,5,5"
+                                            CornerRadius="30">
+                                                <Border
+                                                Width="15"
+                                                Height="15"
+                                                BorderBrush="Gray"
+                                                BorderThickness="1"
+                                                CornerRadius="25" />
+                                            </Border>
+                                        </Border>
+                                    </Border>
+                                    <!--  OUTER  -->
+
+                                </Grid>
+                            </BulletDecorator.Bullet>
+
+                        </BulletDecorator>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="true">
+                                <Setter TargetName="innerBorder" Property="BorderThickness" Value="0,0,0,0" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <ToggleButton x:Name="Emerg_button" Style="{StaticResource notAusButton}"/>
+</UserControl>

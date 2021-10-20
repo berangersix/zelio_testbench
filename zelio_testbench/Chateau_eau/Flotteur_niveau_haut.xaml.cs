@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace zelio_testbench.Chateau_eau
 {
     /// <summary>
-    /// Logique d'interaction pour Float_switch.xaml
+    /// Logique d'interaction pour Flotteur_niveau_haut.xaml
     /// </summary>
-    public partial class Float_switch : UserControl
+    public partial class Flotteur_niveau_haut : UserControl
     {
-        public Float_switch()
+        public Flotteur_niveau_haut()
         {
             InitializeComponent();
         }

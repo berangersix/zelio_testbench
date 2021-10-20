@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace zelio_testbench.Chateau_eau
 {
     /// <summary>
-    /// Logique d'interaction pour Faucet.xaml
+    /// Logique d'interaction pour Flotteur_niveau_bas.xaml
     /// </summary>
-    public partial class Faucet : UserControl
+    public partial class Flotteur_niveau_bas : UserControl
     {
-        public Faucet()
+        public Flotteur_niveau_bas()
         {
             InitializeComponent();
         }

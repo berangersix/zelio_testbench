@@ -1,27 +1,25 @@
-﻿<UserControl x:Class="zelio_testbench.Chateau_eau.Two_pos_switch"
+﻿<UserControl x:Class="zelio_testbench.Chateau_eau.Flotteur_niveau_bas"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:zelio_testbench.Chateau_eau"
              mc:Ignorable="d" 
-             d:DesignHeight="60" d:DesignWidth="60">
+             d:DesignHeight="40" d:DesignWidth="200">
     <UserControl.Resources>
-        <Style x:Key="Style_2pos_sw" TargetType="{x:Type ToggleButton}">
+        <Style x:Key="Style_Floteur_Bas" TargetType="{x:Type ToggleButton}">
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="ToggleButton">
                         <Grid>
-                            <Rectangle Fill="DarkGray"/>
-                            <Ellipse Fill="Black" Stroke="LightGray" />
-                            <Rectangle x:Name="pos_1_rect" Fill="White"  VerticalAlignment="Top" Height="30" Width="10" Margin="25,3,25,0"/>
-                            <Rectangle x:Name="pos_2_rect" Fill="Transparent" VerticalAlignment="Top" Height="10" Width="30" Margin="25,23,5,0"/>
+                            <Label x:Name="Flotteur" Content="Flotteur Niveau bas" FontWeight="Bold" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="Black"/>
+                            <Rectangle HorizontalAlignment="Left" Height="6" Margin="185,17,0,0" Fill="Black"  VerticalAlignment="Top" Width="15"/>
+
                         </Grid>
 
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsChecked" Value="true">
-                                <Setter TargetName="pos_1_rect" Property="Fill" Value="Transparent" />
-                                <Setter TargetName="pos_2_rect" Property="Fill" Value="White" />
+                                <Setter TargetName="Flotteur" Property="Foreground" Value="Red" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -29,6 +27,8 @@
             </Setter>
         </Style>
     </UserControl.Resources>
-    <ToggleButton x:Name="two_pos_sw" Height="60" Width="60" Style="{StaticResource Style_2pos_sw}" IsEnabled="True"  Checked="Check_event" Unchecked="Uncheck_event" />
 
+    <Grid>
+        <ToggleButton x:Name="Floteur_Bas" Style="{StaticResource Style_Floteur_Bas}" IsChecked="False" IsEnabled="False" />
+    </Grid>
 </UserControl>

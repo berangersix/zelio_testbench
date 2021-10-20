@@ -5,8 +5,84 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:zelio_testbench.Chateau_eau"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="100" d:DesignWidth="100">
+    <UserControl.Resources>
+        <Style x:Key="Style_motor" TargetType="{x:Type ToggleButton}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ToggleButton">
+                        <Grid>
+                            <Ellipse Stroke="Black"/>
+                            <Path x:Name="line_arrow1" Stroke="Transparent" Data="M10,50 A40,40 0 0 1 40,10 L30,9 M40,10 L30,18" RenderTransformOrigin="0.5,0.5" >
+                                <Path.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform x:Name="line_arrow1_A" Angle="0"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </Path.RenderTransform>
+                            </Path>
+                            <Path x:Name="line_arrow2" Stroke="Transparent" Data="M10,50 A40,40 0 0 1 40,10 L30,9 M40,10 L30,18" RenderTransformOrigin="0.5,0.5" >
+                                <Path.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform x:Name="line_arrow2_A" Angle="120"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </Path.RenderTransform>
+                            </Path>
+                            <Path x:Name="line_arrow3" Stroke="Transparent" Data="M10,50 A40,40 0 0 1 40,10 L30,9 M40,10 L30,18" RenderTransformOrigin="0.5,0.5" >
+                                <Path.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform x:Name="line_arrow3_A" Angle="-120"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </Path.RenderTransform>
+                            </Path>
+                            <ContentPresenter TextElement.Foreground="Black" TextElement.FontSize="40" TextElement.FontWeight="Bold" Content="M" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Grid>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="true">
+                                <Setter TargetName="line_arrow1" Property="Stroke" Value="Black" />
+                                <Setter TargetName="line_arrow2" Property="Stroke" Value="Black" />
+                                <Setter TargetName="line_arrow3" Property="Stroke" Value="Black" />
+                                <Trigger.EnterActions>
+                                    
+                                <BeginStoryboard>
+                                        <Storyboard RepeatBehavior="Forever" >
+                                            <DoubleAnimation From="0" To="120" 
+                                    Storyboard.TargetName="line_arrow1_A"
+                                    Storyboard.TargetProperty="(RotateTransform.Angle)"
+                                    FillBehavior="Stop" 
+                                    Duration="0:0:2"/>
+                                            <DoubleAnimation From="120" To="240" 
+                                    Storyboard.TargetName="line_arrow2_A"
+                                    Storyboard.TargetProperty="(RotateTransform.Angle)"
+                                    FillBehavior="Stop" 
+                                    Duration="0:0:2"/>
+                                            <DoubleAnimation From="240" To="360" 
+                                    Storyboard.TargetName="line_arrow3_A"
+                                    Storyboard.TargetProperty="(RotateTransform.Angle)"
+                                    FillBehavior="Stop" 
+                                    Duration="0:0:2"/>
+
+                                        </Storyboard>
+                                </BeginStoryboard>
+                                </Trigger.EnterActions>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
     <Grid>
-            
+        <ToggleButton x:Name="Motor_pump" Style="{StaticResource Style_motor}" IsChecked="False" IsEnabled="False" />
     </Grid>
 </UserControl>

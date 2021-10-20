@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Chateau_eau\50e3t50.png" />
     <None Remove="debug_hmi\Images\volt.png" />
     <None Remove="debug_hmi\in_bleu.png" />
     <None Remove="debug_hmi\in_rouge.png" />
@@ -20,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Chateau_eau\50e3t50.png" />
     <Resource Include="debug_hmi\Images\in_bleu.png" />
   </ItemGroup>
 

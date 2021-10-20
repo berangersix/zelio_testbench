@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:zelio_testbench.Chateau_eau"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="60" d:DesignWidth="60">
     <UserControl.Resources>
 
         <Style x:Key="Style_Red_ind" TargetType="{x:Type ToggleButton}">
@@ -52,5 +52,5 @@
             </Setter>
         </Style>
     </UserControl.Resources>
-    <ToggleButton x:Name="light_red" Style="{StaticResource Style_Red_ind}" IsChecked="True"/>
+    <ToggleButton x:Name="light_red" Style="{StaticResource Style_Red_ind}" IsChecked="False" IsEnabled="False"/>
 </UserControl>

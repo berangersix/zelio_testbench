@@ -52,5 +52,5 @@
             </Setter>
         </Style>
     </UserControl.Resources>
-    <ToggleButton x:Name="light_green" Style="{StaticResource Style_Geen_ind}" IsChecked="True"/>
+    <ToggleButton x:Name="light_green" Style="{StaticResource Style_Geen_ind}" IsChecked="False" IsEnabled="False"/>
 </UserControl>

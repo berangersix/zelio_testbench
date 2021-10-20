@@ -16,23 +16,13 @@ using System.Windows.Shapes;
 namespace zelio_testbench.Chateau_eau
 {
     /// <summary>
-    /// Logique d'interaction pour Two_pos_switch.xaml
+    /// Logique d'interaction pour Flotteur_50E3.xaml
     /// </summary>
-    public partial class Two_pos_switch : UserControl
+    public partial class Flotteur_50E3 : UserControl
     {
-        public Two_pos_switch()
+        public Flotteur_50E3()
         {
             InitializeComponent();
-        }
-
-        private void Check_event(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Uncheck_event(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

@@ -12,8 +12,8 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="ToggleButton">
                         <Grid>
-                            <Label x:Name="Flotteur" Content="Flotteur Niveau bas" FontWeight="Bold" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="Black"/>
-                            <Rectangle HorizontalAlignment="Left" Height="6" Margin="185,17,0,0" Fill="Black"  VerticalAlignment="Top" Width="15"/>
+                            <Label x:Name="Flotteur" Content="Flotteur Niveau bas" FontWeight="Bold" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="Green"/>
+                            <Rectangle HorizontalAlignment="Left" Height="6" Margin="185,17,0,0" Fill="Green"  VerticalAlignment="Top" Width="15"/>
 
                         </Grid>
 

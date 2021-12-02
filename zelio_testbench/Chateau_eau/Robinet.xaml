@@ -7,18 +7,29 @@
              mc:Ignorable="d" 
              d:DesignHeight="200" d:DesignWidth="200">
     <UserControl.Resources>
+        <Image  Source="/Chateau_eau/images/robinet.png" x:Key="Robinet_photo"></Image>
         <Style x:Key="Style_Robinet" TargetType="{x:Type ToggleButton}">
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="ToggleButton">
                         <Grid>
-                            <Image x:Name="Img"  HorizontalAlignment="Left"  VerticalAlignment="Bottom"  Source="/Chateau_eau/robinet.png"/>
-                            <Image x:Name="Img_onoff"  HorizontalAlignment="Left"  VerticalAlignment="Top"  Source="/Chateau_eau/off_robinet.png" Height="60"  Margin="58,0,0,0"/>
+                            <Ellipse x:Name="symbol_circle"  Stroke="Red" Width="60" Height="60" VerticalAlignment="Top" HorizontalAlignment="Left" StrokeThickness="4" Margin="70,0,0,0"></Ellipse>
+                            <Path x:Name="line_arrow1off" Stroke="Red" Data="M80,10 L120,50"  VerticalAlignment="Top" HorizontalAlignment="left" RenderTransformOrigin="0.5,0.5" StrokeThickness="4"/>
+                            <Path x:Name="line_arrow2off" Stroke="Red" Data="M80,50 L120,10"   VerticalAlignment="Top" HorizontalAlignment="left" RenderTransformOrigin="0.5,0.5" StrokeThickness="4"/>
+                            <Path x:Name="line_arrow1on" Stroke="Transparent" Data="M80,25 L80,10 L120,10 L120,7 L139,26"  VerticalAlignment="Top" HorizontalAlignment="left" RenderTransformOrigin="0.5,0.5" StrokeThickness="4"/>
+                            <Path x:Name="line_arrow2on" Stroke="Transparent" Data="M80,25 L80,40 L120,40 L120,43 L139,24"  VerticalAlignment="Top" HorizontalAlignment="left" RenderTransformOrigin="0,0.12" StrokeThickness="4"/>
+
+                            <ContentControl  x:Name="Img"  HorizontalAlignment="Left"  VerticalAlignment="Bottom"  Content="{StaticResource Robinet_photo}"/>
+
                         </Grid>
 
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsChecked" Value="true">
-                                <Setter TargetName="Img_onoff" Property="Source" Value="/Chateau_eau/on_robinet.png" />
+                                <Setter TargetName="symbol_circle" Property="Stroke" Value="Transparent" />
+                                <Setter TargetName="line_arrow1off" Property="Stroke" Value="Transparent" />
+                                <Setter TargetName="line_arrow2off" Property="Stroke" Value="Transparent" />
+                                <Setter TargetName="line_arrow1on" Property="Stroke" Value="blue" />
+                                <Setter TargetName="line_arrow2on" Property="Stroke" Value="blue" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -28,6 +39,6 @@
     </UserControl.Resources>
 
     <Grid>
-        <ToggleButton x:Name="Robin" Style="{StaticResource Style_Robinet}" IsEnabled="True" />
+        <ToggleButton x:Name="Robin" Style="{StaticResource Style_Robinet}" IsEnabled="True" IsChecked="true" />
     </Grid>
 </UserControl>

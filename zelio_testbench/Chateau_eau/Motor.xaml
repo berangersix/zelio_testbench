@@ -12,8 +12,8 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="ToggleButton">
                         <Grid>
-                            <Ellipse Stroke="Black"/>
-                            <Path x:Name="line_arrow1" Stroke="Transparent" Data="M10,50 A40,40 0 0 1 40,10 L30,9 M40,10 L30,18" RenderTransformOrigin="0.5,0.5" >
+                            <Ellipse Stroke="Black"  StrokeThickness="4"/>
+                            <Path x:Name="line_arrow1" Stroke="black" StrokeThickness="1" Data="M10,50 A40,40 0 0 1 40,10 L30,9 M40,10 L30,18" RenderTransformOrigin="0.5,0.5" >
                                 <Path.RenderTransform>
                                     <TransformGroup>
                                         <ScaleTransform/>
@@ -23,7 +23,7 @@
                                     </TransformGroup>
                                 </Path.RenderTransform>
                             </Path>
-                            <Path x:Name="line_arrow2" Stroke="Transparent" Data="M10,50 A40,40 0 0 1 40,10 L30,9 M40,10 L30,18" RenderTransformOrigin="0.5,0.5" >
+                            <Path x:Name="line_arrow2" Stroke="Transparent" StrokeThickness="1" Data="M10,50 A40,40 0 0 1 40,10 L30,9 M40,10 L30,18" RenderTransformOrigin="0.5,0.5" >
                                 <Path.RenderTransform>
                                     <TransformGroup>
                                         <ScaleTransform/>
@@ -33,7 +33,7 @@
                                     </TransformGroup>
                                 </Path.RenderTransform>
                             </Path>
-                            <Path x:Name="line_arrow3" Stroke="Transparent" Data="M10,50 A40,40 0 0 1 40,10 L30,9 M40,10 L30,18" RenderTransformOrigin="0.5,0.5" >
+                            <Path x:Name="line_arrow3" Stroke="Transparent" StrokeThickness="1" Data="M10,50 A40,40 0 0 1 40,10 L30,9 M40,10 L30,18" RenderTransformOrigin="0.5,0.5" >
                                 <Path.RenderTransform>
                                     <TransformGroup>
                                         <ScaleTransform/>
@@ -43,7 +43,7 @@
                                     </TransformGroup>
                                 </Path.RenderTransform>
                             </Path>
-                            <ContentPresenter TextElement.Foreground="Black" TextElement.FontSize="40" TextElement.FontWeight="Bold" Content="M" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <ContentPresenter TextElement.Foreground="Black" TextElement.FontSize="50" TextElement.FontWeight="Bold" Content="M" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </Grid>
 
                         <ControlTemplate.Triggers>
@@ -83,6 +83,6 @@
     </UserControl.Resources>
 
     <Grid>
-        <ToggleButton x:Name="Motor_pump" Style="{StaticResource Style_motor}" IsChecked="False" IsEnabled="False" />
+        <ToggleButton x:Name="Motor_pump" Style="{StaticResource Style_motor}" IsChecked="True" IsEnabled="False" />
     </Grid>
 </UserControl>

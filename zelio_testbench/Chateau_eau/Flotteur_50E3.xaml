@@ -12,9 +12,9 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="ToggleButton">
                         <Grid>
-                            <Label x:Name="Flotteur" Content="Flotteur 50E3" FontWeight="Bold" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="Black"/>
-                            <Rectangle HorizontalAlignment="Left" Height="6" Margin="185,17,0,0" Fill="Black"  VerticalAlignment="Top" Width="15"/>
-                            <Image HorizontalAlignment="Left" Height="40" Margin="128,0,0,0"  VerticalAlignment="Center" Width="100" Source="/Chateau_eau/50e3t50.png"/>
+                            <Label x:Name="Flotteur" Content="Flotteur 50E3" FontWeight="Bold" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="Green"/>
+                            <Rectangle HorizontalAlignment="Left" Height="6" Margin="185,17,0,0" Fill="Green"  VerticalAlignment="Top" Width="15"/>
+                            <Image HorizontalAlignment="Left" Height="40" Margin="128,0,0,0"  VerticalAlignment="Center" Width="100" Source="/Chateau_eau/Images/50e3t50.png"/>
 
                         </Grid>
 

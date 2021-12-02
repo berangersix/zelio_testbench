@@ -5,11 +5,116 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:zelio_testbench.Chateau_eau"
              mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="600">
+             d:DesignHeight="1000" d:DesignWidth="1000">
     <Grid Background="#FFE5E5E5">
-        <local:Emergency_button HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-        <local:Tank HorizontalAlignment="Left" Margin="161,40,0,0" VerticalAlignment="Top"/>
-        <local:Temperatur_sensor HorizontalAlignment="Left" Margin="296,32,0,0" VerticalAlignment="Top" Height="332" Width="229"/>
+        <Grid>
+            <local:Tank HorizontalAlignment="Left" Margin="263,85,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+                <local:Tank.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="2" ScaleY="2.5"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </local:Tank.RenderTransform>
+            </local:Tank>
+            <Rectangle x:Name="tank_to_fill" HorizontalAlignment="Left" Height="250" Margin="213,10,0,0" StrokeThickness="4" Stroke="Black" VerticalAlignment="Top" Width="200"/>
+            <Rectangle HorizontalAlignment="Left" Height="18" Margin="400,238,0,0"  StrokeThickness="4" Stroke="Black" VerticalAlignment="Top" Width="204"/>
+            <Rectangle HorizontalAlignment="Left" Height="65" Margin="196,601,0,0" StrokeThickness="4" Stroke="Black" VerticalAlignment="Top" Width="130" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90.119"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle HorizontalAlignment="Left" Height="308" Margin="363,526,0,0"  StrokeThickness="4"  Stroke="Black" VerticalAlignment="Top" Width="39" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90.119"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle HorizontalAlignment="Left" Height="65" Margin="274,601,0,0" StrokeThickness="4" Stroke="Black" VerticalAlignment="Top" Width="130" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90.119"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+
+
+
+            <Rectangle x:Name="filling_pipe" HorizontalAlignment="Center" Height="12" Margin="0,241,0,0" Fill="LightBlue" Stroke="Transparent"  VerticalAlignment="Top" Width="209"/>
+            <Rectangle HorizontalAlignment="Left" Height="287" Margin="275,258,0,0" Stroke="Black"  StrokeThickness="4"  VerticalAlignment="Top" Width="38"/>
+            <Rectangle HorizontalAlignment="Left" Height="204"  StrokeThickness="4" Margin="520,500,0,0" Stroke="Black" VerticalAlignment="Top" Width="408"/>
+            <Rectangle HorizontalAlignment="Left" Height="34" Margin="231,663,0,0" Fill="LightBlue" Stroke="Transparent"  VerticalAlignment="Top" Width="309"/>
+            <Rectangle HorizontalAlignment="Left" Height="51" Margin="231,545,0,0" Fill="LightBlue" Stroke="Transparent"  VerticalAlignment="Top" Width="137"/>
+            <Rectangle HorizontalAlignment="Left" Height="51" Margin="228,545,0,0" StrokeThickness="4" Stroke="Black" VerticalAlignment="Top" Width="143" RenderTransformOrigin="0.5,0.5"/>
+            <Rectangle HorizontalAlignment="Left" Height="120" Margin="231,577,0,0" Fill="LightBlue" Stroke="Transparent"  VerticalAlignment="Top" Width="59"/>
+            <Rectangle HorizontalAlignment="Left" Height="145" Margin="309,550,0,0" Fill="LightBlue" Stroke="Transparent"  VerticalAlignment="Top" Width="59"/>
+        </Grid>
+
+        <local:Motor HorizontalAlignment="Left" Margin="227,594,0,0" VerticalAlignment="Top" Height="70" Width="70" RenderTransformOrigin="0.486,0.571">
+            <local:Motor.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="0.7" ScaleX="0.7"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </local:Motor.RenderTransform>
+        </local:Motor>
+        <local:Motor HorizontalAlignment="Left" Margin="306,595,0,0" VerticalAlignment="Top" Height="70" Width="70" RenderTransformOrigin="0.5,0.5">
+            <local:Motor.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.7" ScaleY="0.7"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </local:Motor.RenderTransform>
+        </local:Motor>
+        <local:Flotteur_50E3 x:Name="Floteur_50E3" HorizontalAlignment="Left" Margin="8,46,0,0" VerticalAlignment="Top"/>
+        <local:Robinet HorizontalAlignment="Left" Margin="549,126,0,0" VerticalAlignment="Top" Width="212" Height="206" RenderTransformOrigin="0.5,0.5">
+            <local:Robinet.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.5" ScaleY="0.5"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </local:Robinet.RenderTransform>
+        </local:Robinet>
+        <local:Tank HorizontalAlignment="Left" Margin="674,550,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+            <local:Tank.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="4" ScaleY="2"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </local:Tank.RenderTransform>
+        </local:Tank>
+
+        <Rectangle x:Name="faucet_water" HorizontalAlignment="Left" Height="336" Margin="675,280,0,0" Fill="LightBlue" Stroke="Transparent"  VerticalAlignment="Top" Width="33"/>
+
+        <local:Flotteur_niveau_bas x:Name="Flotetur_bas" HorizontalAlignment="Left" Margin="8,192,0,0" VerticalAlignment="Top"/>
+        <local:Flotteur_niveau_haut x:Name="Flotteur_haut" HorizontalAlignment="Left" Margin="8,20,0,0" VerticalAlignment="Top"/>
+        <local:Thermometer x:Name="Thermometre" HorizontalAlignment="Left" Margin="422,43,0,0" VerticalAlignment="Top" Height="163" Width="127" MinTemperature="0" MaxTemperature="40"/>
+        <Label Content="Température du réservoir" HorizontalAlignment="Left" Margin="414,12,0,0" VerticalAlignment="Top"/>
+        <Rectangle HorizontalAlignment="Left" Height="301" Margin="278,255,0,0" Fill="LightBlue" Stroke="Transparent"  VerticalAlignment="Top" Width="32"/>
+
+
+
 
     </Grid>
 </UserControl>

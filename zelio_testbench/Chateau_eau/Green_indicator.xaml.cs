@@ -24,5 +24,9 @@ namespace zelio_testbench.Chateau_eau
         {
             InitializeComponent();
         }
+        public void Set_state(bool value)
+        {
+            if (value != light_green.IsChecked.Value) light_green.IsChecked = value;
+        }
     }
 }

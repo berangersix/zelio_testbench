@@ -24,5 +24,18 @@ namespace zelio_testbench.Chateau_eau
         {
             InitializeComponent();
         }
+
+        public bool Get_state()
+        {
+            return Motor_pump.IsChecked.Value;
+        }
+
+        public void Set_state(bool value)
+        {
+            if (value != Get_state())
+            {
+                Motor_pump.IsChecked = value;
+            }
+        }
     }
 }

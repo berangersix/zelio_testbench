@@ -24,5 +24,15 @@ namespace zelio_testbench.Chateau_eau
         {
             InitializeComponent();
         }
+
+        public static readonly DependencyProperty Niveau_eauContentProperty = DependencyProperty.Register("Niveau_eau", typeof(double), typeof(Tank));
+
+        public double Niveau_eau
+        {
+            get { return (double)GetValue(Niveau_eauContentProperty); }
+            set { SetValue(Niveau_eauContentProperty, value); }
+        }
+
+
     }
 }

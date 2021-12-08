@@ -34,5 +34,10 @@ namespace zelio_testbench.Chateau_eau
         {
 
         }
+
+        public bool Get_state()
+        {
+            return two_pos_sw.IsChecked.Value;
+        }
     }
 }

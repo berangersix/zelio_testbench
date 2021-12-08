@@ -54,6 +54,10 @@ namespace zelio_testbench.debug_hmi
            
         }
 
+        public bool Get_state()
+        {
+            return button_output_template.IsChecked.Value;
+        }
         public void Add_callback(del_output_changed cback)
         {
             list_callback.Add(cback);

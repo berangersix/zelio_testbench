@@ -80,8 +80,10 @@ namespace zelio_testbench
             else if (choice.Contains("Chateau d'eau"))
             {
                 Tab_chateau gr_chateau = new();
+                gr_chateau.Set_dic(dic_output, dic_input, dic_analog);
                 TP_tab_main_grid.Children.Add(gr_chateau);
-
+                gr_chateau.Played_event += Start;
+                gr_chateau.Paused_event += Stop;
                 tp_grid = gr_chateau;
             }
             else if (choice.Contains("Feu Boite"))

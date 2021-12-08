@@ -58,5 +58,10 @@ namespace zelio_testbench.debug_hmi
             if (value) button_input_template.IsChecked = true;
             else button_input_template.IsChecked = false;
         }
+
+        public bool Get_value()
+        {
+            return button_input_template.IsChecked.Value;
+        }
     }
 }

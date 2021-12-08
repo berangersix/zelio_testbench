@@ -3,12 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:zelio_testbench.Chateau_eau"
+             xmlns:local="clr-namespace:zelio_testbench.Chateau_eau" xmlns:debug_hmi="clr-namespace:zelio_testbench.debug_hmi"
              mc:Ignorable="d" 
-             d:DesignHeight="1000" d:DesignWidth="1000">
+             d:DesignHeight="1000" d:DesignWidth="2000">
     <Grid Background="#FFE5E5E5">
-        <Grid>
-            <local:Tank HorizontalAlignment="Left" Margin="263,85,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+        <Grid HorizontalAlignment="Left" Width="2000">
+            <local:Tank x:Name="tank_to_fill" Niveau_eau="90"  HorizontalAlignment="Left" Margin="263,85,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
                 <local:Tank.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform ScaleX="2" ScaleY="2.5"/>
@@ -18,7 +18,7 @@
                     </TransformGroup>
                 </local:Tank.RenderTransform>
             </local:Tank>
-            <Rectangle x:Name="tank_to_fill" HorizontalAlignment="Left" Height="250" Margin="213,10,0,0" StrokeThickness="4" Stroke="Black" VerticalAlignment="Top" Width="200"/>
+            <Rectangle HorizontalAlignment="Left" Height="250" Margin="213,10,0,0" StrokeThickness="4" Stroke="Black" VerticalAlignment="Top" Width="200"/>
             <Rectangle HorizontalAlignment="Left" Height="18" Margin="400,238,0,0"  StrokeThickness="4" Stroke="Black" VerticalAlignment="Top" Width="204"/>
             <Rectangle HorizontalAlignment="Left" Height="65" Margin="196,601,0,0" StrokeThickness="4" Stroke="Black" VerticalAlignment="Top" Width="130" RenderTransformOrigin="0.5,0.5">
                 <Rectangle.RenderTransform>
@@ -53,7 +53,7 @@
 
 
 
-            <Rectangle x:Name="filling_pipe" HorizontalAlignment="Center" Height="12" Margin="0,241,0,0" Fill="LightBlue" Stroke="Transparent"  VerticalAlignment="Top" Width="209"/>
+            <Rectangle x:Name="filling_pipe" HorizontalAlignment="Left" Height="12" Margin="398,241,0,0" Fill="White" Stroke="Transparent"  VerticalAlignment="Top" Width="208"/>
             <Rectangle HorizontalAlignment="Left" Height="287" Margin="275,258,0,0" Stroke="Black"  StrokeThickness="4"  VerticalAlignment="Top" Width="38"/>
             <Rectangle HorizontalAlignment="Left" Height="204"  StrokeThickness="4" Margin="520,500,0,0" Stroke="Black" VerticalAlignment="Top" Width="408"/>
             <Rectangle HorizontalAlignment="Left" Height="34" Margin="231,663,0,0" Fill="LightBlue" Stroke="Transparent"  VerticalAlignment="Top" Width="309"/>
@@ -61,9 +61,53 @@
             <Rectangle HorizontalAlignment="Left" Height="51" Margin="228,545,0,0" StrokeThickness="4" Stroke="Black" VerticalAlignment="Top" Width="143" RenderTransformOrigin="0.5,0.5"/>
             <Rectangle HorizontalAlignment="Left" Height="120" Margin="231,577,0,0" Fill="LightBlue" Stroke="Transparent"  VerticalAlignment="Top" Width="59"/>
             <Rectangle HorizontalAlignment="Left" Height="145" Margin="309,550,0,0" Fill="LightBlue" Stroke="Transparent"  VerticalAlignment="Top" Width="59"/>
+            <Rectangle HorizontalAlignment="Left" Height="679" Margin="1018,25,0,0" Stroke="Gray" Fill="LightGray" VerticalAlignment="Top" Width="523"/>
+            <local:Red_indicator  x:Name="Red_Ind" HorizontalAlignment="Left" Margin="1435,597,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+                <local:Red_indicator.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="2" ScaleY="2"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </local:Red_indicator.RenderTransform>
+            </local:Red_indicator>
+            <local:Green_indicator x:Name="Green_Ind" HorizontalAlignment="Left" Margin="1141,602,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+                <local:Green_indicator.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="2" ScaleY="2"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </local:Green_indicator.RenderTransform>
+            </local:Green_indicator>
+            <local:Emergency_button  x:Name="Emerg_button" HorizontalAlignment="Left" Margin="1125,120,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+                <local:Emergency_button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="2" ScaleY="2"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </local:Emergency_button.RenderTransform>
+            </local:Emergency_button>
+            <local:Two_pos_switch x:Name="On_off" HorizontalAlignment="Left" Margin="1423,120,0,0" VerticalAlignment="Top"/>
+            <local:Two_pos_switch x:Name="Err_flot_haut" HorizontalAlignment="Left" Margin="1125,299,0,0" VerticalAlignment="Top"/>
+            <local:Two_pos_switch x:Name="Err_flot_bas" HorizontalAlignment="Left" Margin="1271,299,0,0" VerticalAlignment="Top"/>
+            <local:Two_pos_switch x:Name="Err_flot_50E3" HorizontalAlignment="Left" Margin="1423,299,0,0" VerticalAlignment="Top"/>
+            <local:Two_pos_switch  x:Name="Err_Mot1" HorizontalAlignment="Left" Margin="1125,440,0,0" VerticalAlignment="Top"/>
+            <local:Two_pos_switch  x:Name="Err_Mot2" HorizontalAlignment="Left" Margin="1423,440,0,0" VerticalAlignment="Top"/>
+            <Label Content="Bouton Arret Urgence" Background="White" FontSize="20" HorizontalAlignment="Left" Margin="1053,53,0,0" VerticalAlignment="Top"/>
+            <Label Content="Marche/Arret" Background="White" FontSize="20" HorizontalAlignment="Left" Margin="1389,53,0,0" VerticalAlignment="Top"/>
+            <Label Content="Err Moteur 1" Background="White" FontSize="20" HorizontalAlignment="Left" Margin="1097,390,0,0" VerticalAlignment="Top"/>
+            <Label Content="Err Moteur 2" Background="White" FontSize="20" HorizontalAlignment="Left" Margin="1392,390,0,0" VerticalAlignment="Top"/>
+            <Label Content="Err flotteur haut" Background="White" FontSize="20" HorizontalAlignment="Left" Margin="1068,247,0,0" VerticalAlignment="Top"/>
+            <Label Content="Err flotteur bas" Background="White" FontSize="20" HorizontalAlignment="Left" Margin="1231,247,0,0" VerticalAlignment="Top"/>
+            <Label Content="Err flotteur 50E3" Background="White" FontSize="20" HorizontalAlignment="Left" Margin="1381,247,0,0" VerticalAlignment="Top"/>
         </Grid>
 
-        <local:Motor HorizontalAlignment="Left" Margin="227,594,0,0" VerticalAlignment="Top" Height="70" Width="70" RenderTransformOrigin="0.486,0.571">
+        <local:Motor x:Name="Motor1" HorizontalAlignment="Left" Margin="227,594,0,0" VerticalAlignment="Top" Height="70" Width="70" RenderTransformOrigin="0.486,0.571">
             <local:Motor.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleY="0.7" ScaleX="0.7"/>
@@ -73,7 +117,7 @@
                 </TransformGroup>
             </local:Motor.RenderTransform>
         </local:Motor>
-        <local:Motor HorizontalAlignment="Left" Margin="306,595,0,0" VerticalAlignment="Top" Height="70" Width="70" RenderTransformOrigin="0.5,0.5">
+        <local:Motor x:Name="Motor2" HorizontalAlignment="Left" Margin="306,595,0,0" VerticalAlignment="Top" Height="70" Width="70" RenderTransformOrigin="0.5,0.5">
             <local:Motor.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="0.7" ScaleY="0.7"/>
@@ -83,8 +127,8 @@
                 </TransformGroup>
             </local:Motor.RenderTransform>
         </local:Motor>
-        <local:Flotteur_50E3 x:Name="Floteur_50E3" HorizontalAlignment="Left" Margin="8,46,0,0" VerticalAlignment="Top"/>
-        <local:Robinet HorizontalAlignment="Left" Margin="549,126,0,0" VerticalAlignment="Top" Width="212" Height="206" RenderTransformOrigin="0.5,0.5">
+        <local:Flotteur_50E3 x:Name="Floteur_50E3" HorizontalAlignment="Left" Margin="8,46,0,0" VerticalAlignment="Top" />
+        <local:Robinet x:Name="Robinet" HorizontalAlignment="Left" Margin="549,126,0,0" VerticalAlignment="Top" Width="212" Height="206" RenderTransformOrigin="0.5,0.5">
             <local:Robinet.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="0.5" ScaleY="0.5"/>
@@ -107,13 +151,13 @@
 
         <Rectangle x:Name="faucet_water" HorizontalAlignment="Left" Height="336" Margin="675,280,0,0" Fill="LightBlue" Stroke="Transparent"  VerticalAlignment="Top" Width="33"/>
 
-        <local:Flotteur_niveau_bas x:Name="Flotetur_bas" HorizontalAlignment="Left" Margin="8,192,0,0" VerticalAlignment="Top"/>
+        <local:Flotteur_niveau_bas x:Name="Flotteur_bas" HorizontalAlignment="Left" Margin="8,192,0,0" VerticalAlignment="Top"/>
         <local:Flotteur_niveau_haut x:Name="Flotteur_haut" HorizontalAlignment="Left" Margin="8,20,0,0" VerticalAlignment="Top"/>
         <local:Thermometer x:Name="Thermometre" HorizontalAlignment="Left" Margin="422,43,0,0" VerticalAlignment="Top" Height="163" Width="127" MinTemperature="0" MaxTemperature="40"/>
         <Label Content="Température du réservoir" HorizontalAlignment="Left" Margin="414,12,0,0" VerticalAlignment="Top"/>
         <Rectangle HorizontalAlignment="Left" Height="301" Margin="278,255,0,0" Fill="LightBlue" Stroke="Transparent"  VerticalAlignment="Top" Width="32"/>
 
-
+        <debug_hmi:Play_button x:Name="TP_button_play" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,20"  Height="41" Width="101" Played_event="Play_event"  Paused_event="Pause_event"/>
 
 
     </Grid>

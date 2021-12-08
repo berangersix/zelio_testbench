@@ -24,5 +24,10 @@ namespace zelio_testbench.Chateau_eau
         {
             InitializeComponent();
         }
+
+        public bool Get_state()
+        {
+            return Robin.IsChecked.Value;
+        }
     }
 }

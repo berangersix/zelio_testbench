@@ -29,6 +29,6 @@
     </UserControl.Resources>
 
     <Grid>
-        <ToggleButton x:Name="Floteur_Bas" Style="{StaticResource Style_Floteur_Bas}" IsChecked="False" IsEnabled="False" />
+        <ToggleButton x:Name="Flotteur_Bas" Style="{StaticResource Style_Floteur_Bas}" IsChecked="False" IsEnabled="False" />
     </Grid>
 </UserControl>

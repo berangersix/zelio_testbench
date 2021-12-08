@@ -9,7 +9,7 @@
 
     <Grid>
 
-        <ProgressBar HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="100" RenderTransformOrigin="0.5,0.5" Value="49" Foreground="LightBlue" Background="White" BorderThickness="0" BorderBrush="Transparent" >
+        <ProgressBar HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="100" RenderTransformOrigin="0.5,0.5" Value="{Binding Niveau_eau, RelativeSource={RelativeSource AncestorType=UserControl}}" Foreground="LightBlue" Background="White" BorderThickness="0" BorderBrush="Transparent" >
             <ProgressBar.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>

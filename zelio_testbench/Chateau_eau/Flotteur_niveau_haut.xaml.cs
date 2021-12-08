@@ -24,5 +24,14 @@ namespace zelio_testbench.Chateau_eau
         {
             InitializeComponent();
         }
+
+        public void Set_state(bool value)
+        {
+            Floteur_Haut.IsChecked = value;
+        }
+        public bool Get_state()
+        {
+            return Floteur_Haut.IsChecked.Value;
+        }
     }
 }

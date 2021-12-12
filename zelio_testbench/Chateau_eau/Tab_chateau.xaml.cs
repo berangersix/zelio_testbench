@@ -128,7 +128,7 @@ namespace zelio_testbench.Chateau_eau
                 I3 = alim_ok && Floteur_50E3.Get_state()    && !Err_flot_50E3.Get_state();
                 if (I1 != dic_input[1].Get_value()) dic_input[1].Set_value(I1);
                 if (I2 != dic_input[2].Get_value()) dic_input[2].Set_value(I2);
-                if (I2 != dic_input[3].Get_value()) dic_input[3].Set_value(I3);
+                if (I3 != dic_input[3].Get_value()) dic_input[3].Set_value(I3);
 
                 //Read motor value
                 IC = Motor1.Get_state() && alim_ok;

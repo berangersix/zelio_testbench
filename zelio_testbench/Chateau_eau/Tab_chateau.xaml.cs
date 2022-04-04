@@ -83,6 +83,8 @@ namespace zelio_testbench.Chateau_eau
         public event play_event Played_event;
         public delegate void pause_event(object sender, RoutedEventArgs e);
         public event pause_event Paused_event;
+
+    
         /// <summary>
         /// method called when played button is clicked
         /// </summary>
@@ -145,8 +147,8 @@ namespace zelio_testbench.Chateau_eau
                 if (Motor1.Get_state() || Motor2.Get_state()) water_level = Math.Min(water_level + fill_water_speed * (timer_time / 1000), 100);
 
                 //voyant
-                Green_Ind.Set_state(dic_output[3].Get_state() && alim_ok);
-                Red_Ind.Set_state(dic_output[4].Get_state() && alim_ok);
+                Green_Ind.Set_state(dic_output[4].Get_state() && alim_ok);
+                Red_Ind.Set_state(dic_output[3].Get_state() && alim_ok);
 
 
                 //set waterlevel

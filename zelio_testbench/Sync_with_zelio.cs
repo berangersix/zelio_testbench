@@ -11,7 +11,9 @@ using System.Timers;
 
 
 namespace zelio_testbench
-{      
+{
+
+
     //callback when something change
     public delegate void del_output_changed(bool value);
 
@@ -25,6 +27,13 @@ namespace zelio_testbench
 
         private const string ZELIO_WNAME = "Zelio2";
         private const int timer_time = 20;
+
+
+        //version of zelio soft
+        private int major_Version;
+        private int minor_Version;
+        private int build_Version;
+
 
         private Process hWnd_Zelio;
         //position
@@ -127,15 +136,38 @@ namespace zelio_testbench
             }
             //get windows handle
             hWnd_Zelio = Managed_wprocess.Find_Process(ZELIO_WNAME);
+           
             if (hWnd_Zelio == null)
             {
                 Local_log("Process not found");
                 return false;
             }
-            //set all base adress get value as "Zelio2.exe", 0x375678 thanks to CheatEngine. It seems static
-            address_TOR_input = Managed_wprocess.Find_adress(hWnd_Zelio, "Zelio2.exe", 0x375678);
-            address_TOR_analog_input = Managed_wprocess.Find_adress(hWnd_Zelio, "Zelio2.exe", 0x375678 + 0x5);
-            address_TOR_output = Managed_wprocess.Find_adress(hWnd_Zelio, "Z2Dc4c_Interf.dll", 0x382BC);
+
+            major_Version = hWnd_Zelio.MainModule.FileVersionInfo.FileMajorPart;
+            minor_Version = hWnd_Zelio.MainModule.FileVersionInfo.FileMinorPart;
+            build_Version = hWnd_Zelio.MainModule.FileVersionInfo.FileBuildPart;
+
+            if (major_Version == 5 && minor_Version==4 && build_Version==0)
+            {
+                //set all base adress get value as "Zelio2.exe", 0x375678 thanks to CheatEngine. It seems static
+                address_TOR_input = Managed_wprocess.Find_adress(hWnd_Zelio, "Zelio2.exe", 0x375678);
+                address_TOR_analog_input = Managed_wprocess.Find_adress(hWnd_Zelio, "Zelio2.exe", 0x375678 + 0x5);
+                address_TOR_output = Managed_wprocess.Find_adress(hWnd_Zelio, "Z2Dc4c_Interf.dll", 0x382BC);
+       
+            }
+            else if (major_Version == 5 && minor_Version == 4 && build_Version == 1)
+            {
+                //set all base adress get value as "Zelio2.exe", 0x375678 thanks to CheatEngine. It seems static
+                address_TOR_input = Managed_wprocess.Find_adress(hWnd_Zelio, "Zelio2.exe", 0x394010);
+                address_TOR_analog_input = Managed_wprocess.Find_adress(hWnd_Zelio, "Zelio2.exe", 0x394010 + 0x5);
+                address_TOR_output = Managed_wprocess.Find_adress(hWnd_Zelio, "Z2Dc4c_Interf.dll", 0x382BC + 0x1080);
+            }
+            else
+            {
+                Local_log("Version not found");
+                return false;
+            }
+     
             if (address_TOR_input == IntPtr.Zero || address_TOR_analog_input == IntPtr.Zero || address_TOR_output == IntPtr.Zero)
             {
                 Local_log("Symbol not found");

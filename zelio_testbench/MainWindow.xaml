@@ -6,7 +6,7 @@
         xmlns:uc="clr-namespace:zelio_testbench.debug_hmi"
         xmlns:local="clr-namespace:zelio_testbench"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" WindowState="Maximized">
 
     <Grid>
         <TabControl x:Name="tab_w">
